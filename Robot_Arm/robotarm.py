@@ -76,19 +76,19 @@ def main():
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_1]:
-            if keys[pygame.K_LEFT]:
-                jointangle1 += angle_increment
             if keys[pygame.K_RIGHT]:
+                jointangle1 += angle_increment
+            if keys[pygame.K_LEFT]:
                 jointangle1 -= angle_increment
         elif keys[pygame.K_2]:
-            if keys[pygame.K_LEFT]:
-                jointangle2 += angle_increment
             if keys[pygame.K_RIGHT]:
+                jointangle2 += angle_increment
+            if keys[pygame.K_LEFT]:
                 jointangle2 -= angle_increment
         elif keys[pygame.K_3]:
-            if keys[pygame.K_LEFT]:
-                jointangle3 += angle_increment
             if keys[pygame.K_RIGHT]:
+                jointangle3 += angle_increment
+            if keys[pygame.K_LEFT]:
                 jointangle3 -= angle_increment
 
         if keys[pygame.K_SPACE]:
