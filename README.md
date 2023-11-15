@@ -1,10 +1,12 @@
 # 📌 README.md
+
 **📍This file include all project instruction.**
+
 > ## _RobotArm_Project_ 🤖
 
 ---
 
-**⭐️ How to control?**
+**⭐︎ How to control?**
 
 : You can select robot arm joint (from bottom 1,2,3) using number key 1, 2, 3.
 Press the space key to hold the gripper and press again to stop.
@@ -12,7 +14,7 @@ play: If you press the direction key while holding the number key, you can rotat
 
 ---
 
-**⭐️ Main idea**
+**⭐︎ Main idea**
 
 : using Rmat function, you can rotate polygons.
 
@@ -41,9 +43,11 @@ def Tmat(tx, ty):
 
 ---
 
-youtube link
+YouTube link 🎥 (click this image)
 
 [![robotarm](http://img.youtube.com/vi/i2TLwd6HLls/0.jpg)](https://youtu.be/i2TLwd6HLls)
+
+---
 
 > ## _Shmup_Project_ 🚀
 
@@ -61,17 +65,16 @@ I used these images...
 
 > - background image
 >
->   <img src="Shmup/img/Ruined_City_Background.png" width="50%" height="20%" title="background" alt="back"></img>
+>   <img src="img/Ruined_City_Background.png" width="60%" height="30%" title="background" alt="back"></img>
 
 > - etc image ..more
 >   <!-- prettier-ignore -->
->   
->     ![meteor](Shmup/img/meteorGrey_big1.png)
->   ![player](Shmup/img/alien.png)
->   ![explosion](Shmup/img/regularExplosion02.png)
->   ![laser](Shmup/img/laserBullet.png)
+>     ![meteor](img/meteorGrey_big1.png)
+>   ![player](img/alien.png)
+>   ![explosion](img/regularExplosion02.png)
+>   ![laser](img/laserBlue16.png)
 
-**⭐️ Adding graphics**
+**⭐︎ Adding graphics**
 
 : The img directory containing the image file should be located on the same directory as the running file.
 
@@ -120,7 +123,7 @@ I made these sound files... using [Bfxr](https://www.bfxr.net)
 
 ##### sound files at **snd** directory
 
-**⭐️ Adding sound and music**
+**⭐︎ Adding sound and music**
 
 : The snd directory containing the sound file should be located on the same directory as the running file.
 
@@ -148,11 +151,11 @@ pygame.mixer.music.set_volume(0.4)
 
 ---
 
-**⭐️ How to control?**
+**⭐︎ How to control?**
 
 : This is going to be a keyboard controlled game, so we want the player to move when the Left or Right arrow keys are pressed. The player presses the spacebar, a bullet will be fired.
 
-**⭐️ Main idea**
+**⭐︎ Main idea**
 
 1. **Enemy sprites**
 
@@ -232,3 +235,11 @@ pygame.mixer.music.set_volume(0.4)
            all_sprites.add(expl)
            newmob()
    ```
+
+---
+
+YouTube link 🎥 (click this image)
+
+[![Shmup](http://img.youtube.com/vi/V_S9P3KKImQ/1.jpg)](https://youtu.be/V_S9P3KKImQ)
+
+---
