@@ -16,14 +16,15 @@ I used these images...
 
 > - background image
 >
->   <img src="img/Ruined_City_Background.png" width="60%" height="30%" title="background" alt="back"></img>
+>   <img src="Shmup/img/Ruined_City_Background.png" width="60%" height="30%" title="background" alt="back"></img>
 
 > - etc image ..more
+>   
 >   <!-- prettier-ignore -->
->     ![meteor](img/meteorGrey_big1.png)
->   ![player](img/alien.png)
->   ![explosion](img/regularExplosion02.png)
->   ![laser](img/laserBlue16.png)
+>     ![meteor](Shmup/img/meteorGrey_big1.png)
+>   ![player](Shmup/img/alien.png)
+>   ![explosion](Shmup/img/regularExplosion02.png)
+>   ![laser](Shmup/img/laserBullet.png)
 
 **⭐︎ Adding graphics**
 
@@ -191,7 +192,6 @@ pygame.mixer.music.set_volume(0.4)
 
 YouTube link 🎥 (click this image)
 
-[![Shmup](http://img.youtube.com/vi/V_S9P3KKImQ/1.jpg)](https://youtu.be/V_S9P3KKImQ)
+[![Shmup](http://img.youtube.com/vi/V_S9P3KKImQ/0.jpg)](https://youtu.be/V_S9P3KKImQ)
 
 ---
-
