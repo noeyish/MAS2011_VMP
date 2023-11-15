@@ -64,10 +64,10 @@ I used these images...
 
 > - etc image ..more
 >   <!-- prettier-ignore -->
->     ![meteor](shmup/img/meteorGrey_big1.png)
->   ![player](shmup/img/alien.png)
->   ![explosion](shmup/img/regularExplosion02.png)
->   ![laser](shmup/img/laserBlue16.png)
+>     ![meteor](Shmup/img/meteorGrey_big1.png)
+>   ![player](Shmup/img/alien.png)
+>   ![explosion](Shmup/img/regularExplosion02.png)
+>   ![laser](Shmup/img/laserBlue16.png)
 
 **⭐︎ Adding graphics**
 
