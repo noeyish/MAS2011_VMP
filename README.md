@@ -241,6 +241,6 @@ pygame.mixer.music.set_volume(0.4)
 
 YouTube link 🎥 (click this image)
 
-[![Shmup](http://img.youtube.com/vi/V_S9P3KKImQ/1.jpg)](https://youtu.be/V_S9P3KKImQ)
+[![Shmup](http://img.youtube.com/vi/V_S9P3KKImQ/0.jpg)](https://youtu.be/V_S9P3KKImQ)
 
 ---
