@@ -64,6 +64,7 @@ I used these images...
 
 > - etc image ..more
 >   <!-- prettier-ignore -->
+>   
 >     ![meteor](Shmup/img/meteorGrey_big1.png)
 >   ![player](Shmup/img/alien.png)
 >   ![explosion](Shmup/img/regularExplosion02.png)
