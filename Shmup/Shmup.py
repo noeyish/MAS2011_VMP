@@ -27,7 +27,7 @@ YELLOW = (255, 255, 0)
 pygame.init()
 pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Shmup!")
+pygame.display.set_caption("20221573_심하연_Shmup!")
 clock = pygame.time.Clock()
 
 font_name = pygame.font.match_font('arial')
@@ -55,7 +55,7 @@ def draw_shield_bar(surf, x, y, pct):
     fill = (pct / 100) * BAR_LENGTH
     outline_rect = pygame.Rect(x, y, BAR_LENGTH, BAR_HEIGHT)
     fill_rect = pygame.Rect(x, y, fill, BAR_HEIGHT)
-    pygame.draw.rect(surf, GREEN, fill_rect)
+    pygame.draw.rect(surf, (135, 206, 235), fill_rect)
     pygame.draw.rect(surf, WHITE, outline_rect, 2)
 
 
@@ -185,7 +185,7 @@ background = pygame.image.load(
 background_rect = background.get_rect()
 player_img = pygame.image.load(
     path.join(img_dir, "alien.png")).convert()
-bullet_img = pygame.image.load(path.join(img_dir, "laserBlue16.png")).convert()
+bullet_img = pygame.image.load(path.join(img_dir, "laserBullet.png")).convert()
 meteor_images = []
 meteor_list = ['meteorGrey_big1.png', 'meteorGrey_big2.png', 'meteorGrey_med1.png',
                'meteorGrey_med2.png', 'meteorGrey_small1.png', 'meteorGrey_small2.png',
@@ -266,4 +266,3 @@ while running:
     pygame.display.flip()
 
 pygame.quit()
-
