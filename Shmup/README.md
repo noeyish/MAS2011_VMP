@@ -23,7 +23,7 @@ I used these images...
 >     ![meteor](img/meteorGrey_big1.png)
 >   ![player](img/alien.png)
 >   ![explosion](img/regularExplosion02.png)
->   ![laser](img/laserBullet.png)
+>   ![laser](img/laserBlue16.png)
 
 **⭐︎ Adding graphics**
 
@@ -186,3 +186,12 @@ pygame.mixer.music.set_volume(0.4)
            all_sprites.add(expl)
            newmob()
    ```
+
+---
+
+YouTube link 🎥 (click this image)
+
+[![Shmup](http://img.youtube.com/vi/V_S9P3KKImQ/1.jpg)](https://youtu.be/V_S9P3KKImQ)
+
+---
+
