@@ -16,15 +16,15 @@ I used these images...
 
 > - background image
 >
->   <img src="Shmup/img/Ruined_City_Background.png" width="60%" height="30%" title="background" alt="back"></img>
+>   <img src="img/Ruined_City_Background.png" width="60%" height="30%" title="background" alt="back"></img>
 
 > - etc image ..more
 >   
 >   <!-- prettier-ignore -->
->     ![meteor](Shmup/img/meteorGrey_big1.png)
->   ![player](Shmup/img/alien.png)
->   ![explosion](Shmup/img/regularExplosion02.png)
->   ![laser](Shmup/img/laserBullet.png)
+>     ![meteor](img/meteorGrey_big1.png)
+>   ![player](img/alien.png)
+>   ![explosion](img/regularExplosion02.png)
+>   ![laser](img/laserBullet.png)
 
 **⭐︎ Adding graphics**
 
