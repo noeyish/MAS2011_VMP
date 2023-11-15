@@ -60,7 +60,7 @@ I used these images...
 
 > - background image
 >
->   <img src="img/Ruined_City_Background.png" width="60%" height="30%" title="background" alt="back"></img>
+>   <img src="Shmup/img/Ruined_City_Background.png" width="60%" height="30%" title="background" alt="back"></img>
 
 > - etc image ..more
 >   <!-- prettier-ignore -->
