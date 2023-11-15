@@ -68,6 +68,7 @@ I used these images...
 >   <img src="Shmup/img/Ruined_City_Background.png" width="60%" height="30%" title="background" alt="back"></img>
 
 > - etc image ..more
+>   
 >   <!-- prettier-ignore -->
 >     ![meteor](Shmup/img/meteorGrey_big1.png)
 >   ![player](Shmup/img/alien.png)
