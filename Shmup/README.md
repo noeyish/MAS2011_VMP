@@ -23,7 +23,7 @@ I used these images...
 >     ![meteor](img/meteorGrey_big1.png)
 >   ![player](img/alien.png)
 >   ![explosion](img/regularExplosion02.png)
->   ![laser](img/laserBlue16.png)
+>   ![laser](img/laserBullet.png)
 
 **⭐︎ Adding graphics**
 
