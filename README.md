@@ -73,7 +73,7 @@ I used these images...
 >     ![meteor](Shmup/img/meteorGrey_big1.png)
 >   ![player](Shmup/img/alien.png)
 >   ![explosion](Shmup/img/regularExplosion02.png)
->   ![laser](Shmup/img/laserBlue16.png)
+>   ![laser](Shmup/img/laserBullet.png)
 
 **⭐︎ Adding graphics**
 
