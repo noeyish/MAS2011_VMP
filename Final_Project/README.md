@@ -16,6 +16,8 @@ Continue the game until all cards are matched.
 
 **⭐︎ Main idea**
 
-: See pdf file.
-[MYPLAN](20221573_심하연_vmp_pj.pdf)
+: See pdf file. my pdf file is in Final_Project directory.
+
+[MYPLAN](https://github.com/noeyish/MAS2011_VMP/blob/main/Final_Project/20221573_심하연_vmp_pj.pdf)
+
 
