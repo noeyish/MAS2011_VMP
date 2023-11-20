@@ -262,4 +262,4 @@ Continue the game until all cards are matched.
 **⭐︎ Main idea**
 
 : See pdf file.
-[MYPLAN](https://github.com/noeyish/MAS2011_VMP/blob/main/Final_Project/20221573_심하연_vmp_pj.pdf)
+[MYPLAN](Final_Project/20221573_심하연_vmp_pj.pdf)
