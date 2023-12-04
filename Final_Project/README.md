@@ -84,6 +84,14 @@ My snd directory:
 ... etc
 
 ---
+**⭐︎ Adding Font**
+
+> font/Silver.ttf
+
+I download this file at
+[dafont](https://www.dafont.com/silver-broom.font)
+
+---
 
 **⭐︎ Animation effect**
 
