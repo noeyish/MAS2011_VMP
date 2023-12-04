@@ -16,6 +16,24 @@ WIDTH, HEIGHT = screen.get_size()  # 화면의 너비와 높이를 가져옴
 pygame.display.set_caption("Card Match Game!")
 background_images = {}
 
+# 음악
+pygame.mixer.init()
+pygame.mixer.music.load('snd/joyful-snowman.mp3')  # 음악 파일 경로
+pygame.mixer.music.set_volume(0.15)  # 볼륨 설정, 0.0에서 1.0 사이
+pygame.mixer.music.play(-1)  # 무한 반복 재생
+
+# 사운드 파일 로드
+error_sound = pygame.mixer.Sound('snd/error.ogg')
+error_sound.set_volume(1)  # 클릭 사운드의 볼륨을 50%로 설정
+
+click_sound = pygame.mixer.Sound('snd/click.wav')
+flip_sound = pygame.mixer.Sound('snd/flip.wav')
+windbell_sound = pygame.mixer.Sound('snd/wind-bell.mp3')
+star_sound = pygame.mixer.Sound('snd/star.mp3')
+fail_sound = pygame.mixer.Sound('snd/fail.mp3')
+match_sound = pygame.mixer.Sound('snd/match.mp3')
+game_start_sound = pygame.mixer.Sound('snd/game-start.mp3')
+
 
 # 색상
 WHITE = (255, 255, 255)
@@ -40,7 +58,6 @@ exit_button_rect = exit_button_image.get_rect(
 matched_pairs = set()  # 맞춘 카드의 쌍을 저장하는 집합
 flipped_cards = []  # 현재 뒤집힌 카드를 저장하는 리스트
 flip_count = 0  # 현재 턴에서 뒤집은 카드의 개수를 저장하는 변수
-last_flipped_card = None  # 바로 전에 뒤집은 카드를 저장하는 변수
 selected_level = None
 total_flips = 0
 current_level = "Level 1"
@@ -120,6 +137,7 @@ def initialize_board():
     draw_all_cards(screen)
     pygame.display.flip()
     pygame.time.delay(3000)  # Delay for 1 second to show all cards
+    game_start_sound.play()
     show_message("Start!", screen, duration=450)
     # Flip all cards back to their back side
     board = [(card, False) for card in cards]
@@ -188,7 +206,6 @@ def flip_animation(card_index, screen, board):
         display_flip_count(screen)
         screen.blit(scaled_card, card_pos)
         pygame.display.flip()
-        # pygame.time.delay(2)
 
     # 카드 상태 업데이트
     board[card_index] = (card, not board[card_index][1])
@@ -304,11 +321,13 @@ def level_selection_menu():
                 x, y = event.pos
                 # Check if exit button is clicked
                 if exit_button_rect.collidepoint(x, y):
+                    click_sound.play()
                     return  # Return to the main menu
                 for name, pos in button_positions.items():
                     button_rect = pygame.Rect(
                         pos, level_button_images[name].get_size())
                     if button_rect.collidepoint(x, y):
+                        click_sound.play()
                         fade_out_animation(screen)
                         selected_level = name  # Store the selected level
                         set_current_background(selected_level)  # 현재 배경 설정
@@ -345,8 +364,20 @@ def main_menu():
         title_background, (WIDTH, HEIGHT))
 
     while True:
+        font = pygame.font.Font('font/Silver.ttf', 100)
+        # 기본 메시지 렌더링
+        text1 = font.render("Miss! Match!", True, WHITE)
+        text2 = font.render("Card Game", True, WHITE)
+
+        text_rect1 = text1.get_rect(
+            center=(WIDTH // 2, HEIGHT // 2 - 20))  # 메시지 위치 조정
+
+        text_rect2 = text2.get_rect(
+            center=(WIDTH // 2, HEIGHT // 2+80))  # 메시지 위치 조정
 
         screen.blit(title_background, (0, 0))
+        screen.blit(text1, text_rect1)
+        screen.blit(text2, text_rect2)
 
         # 각 버튼 이미지를 화면에 그리기
         for name, pos in button_positions.items():
@@ -362,6 +393,7 @@ def main_menu():
                     button_rect = pygame.Rect(
                         pos, button_images[name].get_size())
                     if button_rect.collidepoint(x, y):
+                        click_sound.play()
                         # 버튼별로 다른 동작 실행
                         if name == "play":
                             fade_out_animation(screen)
@@ -381,6 +413,7 @@ def main_menu():
 
                             pass
                         elif name == "save":
+
                             fade_out_animation(screen)
                             display_saved_data()
                             # Rank 화면
@@ -495,6 +528,8 @@ def display_saved_data():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = event.pos
                 if exit_button_rect.collidepoint(x, y):
+                    click_sound.play()
+
                     running = False
                 elif event.type == pygame.QUIT:
                     pygame.quit()
@@ -502,12 +537,13 @@ def display_saved_data():
 
 
 def game_loop():
-    global flipped_cards, flip_count, last_flipped_card, board, matched_pairs
+    global flipped_cards, flip_count, board, matched_pairs
     flip_count = 0
+    running = True
 
     global total_flips
     # set_background(current_level)
-    while True:
+    while running:
         # set_background(current_level)
         draw_all_cards(screen)
         display_flip_count(screen)
@@ -521,8 +557,8 @@ def game_loop():
                 x, y = pygame.mouse.get_pos()
 
                 if exit_button_rect.collidepoint(x, y):
-                    pygame.quit()
-                    sys.exit()
+                    click_sound.play()
+                    running = False
 
                 if selected_level == "Level 1":
                     cols, rows = 5, 2
@@ -549,12 +585,14 @@ def game_loop():
                     # Check if the card is already flipped or matched
                     if card_index in matched_pairs or card_index in flipped_cards:
                         continue
-
+                    flip_sound.play()
                     display_flip_count(screen)
 
                     flip_animation(card_index, screen, board)
                     flipped_cards.append(card_index)
+
                     board[card_index] = (cards[card_index], True)
+
                     flip_count += 1
 
                     if flip_count == 2:
@@ -564,6 +602,7 @@ def game_loop():
                         total_flips += 1
 
                         if card1 == card2:
+                            match_sound.play()
                             matched_pairs.add(card1)
                             show_message("Match!", screen)
                             pygame.time.delay(400)
@@ -571,11 +610,14 @@ def game_loop():
                                 [card1_index, card2_index], screen, board)
                             flipped_cards = []  # 매치된 카드는 다시 클릭할 수 없도록 flipped_cards 비우기
                         else:
+                            error_sound.play()
                             show_message("Miss!", screen)
                             pygame.time.delay(500)
-
+                            flip_sound.play()
                             flip_animation(card1_index, screen, board)
+                            flip_sound.play()
                             flip_animation(card2_index, screen, board)
+
                             board[card1_index] = (card1, False)
                             board[card2_index] = (card2, False)
 
@@ -633,16 +675,20 @@ def display_stars(screen, num_stars):
         else:
             screen.blit(empty_star_image, (x, HEIGHT // 2 + 30))
     if num_stars == 0:
+        fail_sound.play()
         text = font.render("Fail !!", True, WHITE)
 
-    if num_stars == 1:
-        text = font.render("Good !!", True, WHITE)
+    else:
+        star_sound.play()
+        if num_stars == 1:
 
-    if num_stars == 2:
-        text = font.render("Excellent !!", True, WHITE)
+            text = font.render("Good !!", True, WHITE)
 
-    if num_stars == 3:
-        text = font.render("Perfect Score!!", True, WHITE)
+        elif num_stars == 2:
+            text = font.render("Excellent !!", True, WHITE)
+
+        elif num_stars == 3:
+            text = font.render("Perfect Score!!", True, WHITE)
 
     text_rect = text.get_rect(center=(WIDTH // 2, 360))
     screen.blit(text, text_rect)
@@ -664,10 +710,9 @@ def game_over():
         selected_decorations)
     decorations_positions.update(new_decorations_positions)  # 기존 위치 정보 업데이트
     save_decorations_positions(decorations_positions)
-    # 새로운 오너먼트 이름 목록을 생성합니다.
-    new_decorations_names = [name for name, _ in selected_decorations]
 
     # 오너먼트 배치 화면 표시
+    windbell_sound.play()
     display_decorations_screen(
         decorations, decorations_positions, list(new_decorations_positions.keys()))
 
@@ -704,8 +749,9 @@ def set_current_background(level):
 
 # 오너먼트 배치 화면 표시 함수
 
-
 # 오너먼트 배치 화면 표시 함수
+
+
 def display_decorations_screen(decorations, positions, new_decorations_names):
     global current_background  # 전역 변수 사용 선언
     selected_decoration = None
@@ -728,13 +774,14 @@ def display_decorations_screen(decorations, positions, new_decorations_names):
                     ornament_rect = pygame.Rect(
                         pos, decorations[name].get_size())
                     if ornament_rect.collidepoint(event.pos):
+                        click_sound.play()
                         selected_decoration = name
                         mouse_offset_x = pos[0] - event.pos[0]
                         mouse_offset_y = pos[1] - event.pos[1]
                         break
                 if exit_button_rect.collidepoint(event.pos):
-                    pygame.quit()
-                    sys.exit()
+                    click_sound.play()
+                    running = False
 
             elif event.type == pygame.MOUSEBUTTONUP:
                 selected_decoration = None
@@ -743,9 +790,9 @@ def display_decorations_screen(decorations, positions, new_decorations_names):
                                                   mouse_offset_x, event.pos[1] + mouse_offset_y]
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s:  # 'S' 키를 누르면 저장 후 종료
+                    windbell_sound.set_volume(0)
                     save_decorations_positions(positions)
-                    pygame.quit()
-                    sys.exit()
+                    running = False
 
         if current_background:  # 현재 배경 이미지가 존재하는지 확인
             screen.blit(current_background, (0, 0))  # 현재 레벨의 배경 설정
