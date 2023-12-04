@@ -261,11 +261,11 @@ YouTube link 🎥 (click this image)
 
 **⭐︎ Tutorial**
 
-1.<img src="final_Project/img/tutorial/001.png" width="45%" height="25%" title="background" alt="back"></img> 2.<img src="final_Project/img/tutorial/002.png" width="45%" height="25%" title="background" alt="back"></img>
+1.<img src="Final_Project/img/tutorial/001.png" width="45%" height="25%" title="background" alt="back"></img> 2.<img src="Final_Project/img/tutorial/002.png" width="45%" height="25%" title="background" alt="back"></img>
 
-3.<img src="final_Project/img/tutorial/003.png" width="45%" height="25%" title="background" alt="back"></img> 4.<img src="final_Project/img/tutorial/004.png" width="45%" height="25%" title="background" alt="back"></img>
+3.<img src="Final_Project/img/tutorial/003.png" width="45%" height="25%" title="background" alt="back"></img> 4.<img src="Final_Project/img/tutorial/004.png" width="45%" height="25%" title="background" alt="back"></img>
 
-5.<img src="final_Project/img/tutorial/005.png" width="45%" height="25%" title="background" alt="back"></img> 6.<img src="final_Project/img/tutorial/006.png" width="45%" height="25%" title="background" alt="back"></img>
+5.<img src="Final_Project/img/tutorial/005.png" width="45%" height="25%" title="background" alt="back"></img> 6.<img src="Final_Project/img/tutorial/006.png" width="45%" height="25%" title="background" alt="back"></img>
 
 ---
 
@@ -302,7 +302,7 @@ All images are in the img directory
 >
 >    <!-- prettier-ignore -->
 >
->   <img src="final_Project/img/back_ground/level3.png" width="50%" height="25%" title="background" alt="back"></img> <img src="final_Project/img/level3/card1.png" width="20%" height="10%" title="background" alt="back"></img> <img src="final_Project/img/level3/card_back.png" width="20%" height="10%" title="background" alt="back"></img> <img src="final_Project/img/tree.png" width="30%" height="30%" title="background" alt="back"></img> <img src="final_Project/img/button/level3.png" width="10%" height="10%" title="background" alt="back"></img> <img src="final_Project/img/button/play.png" width="10%" height="10%" title="background" alt="back"></img> <img src="final_Project/img/Star/star.png" width="10%" height="10%" title="background" alt="back"></img> <img src="final_Project/img/ornament/o2.png" width="10%" height="10%" title="background" alt="back"></img>
+>   <img src="Final_Project/img/back_ground/level3.png" width="50%" height="25%" title="background" alt="back"></img> <img src="Final_Project/img/level3/card1.png" width="20%" height="10%" title="background" alt="back"></img> <img src="Final_Project/img/level3/card_back.png" width="20%" height="10%" title="background" alt="back"></img> <img src="Final_Project/img/tree.png" width="30%" height="30%" title="background" alt="back"></img> <img src="Final_Project/img/button/level3.png" width="10%" height="10%" title="background" alt="back"></img> <img src="Final_Project/img/button/play.png" width="10%" height="10%" title="background" alt="back"></img> <img src="Final_Project/img/Star/star.png" width="10%" height="10%" title="background" alt="back"></img> <img src="Final_Project/img/ornament/o2.png" width="10%" height="10%" title="background" alt="back"></img>
 
 I made my start screen using [Pixlr](https://www.pixlr.com)
 
