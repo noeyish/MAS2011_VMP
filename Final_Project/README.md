@@ -57,7 +57,7 @@ All images are in the img directory
 >
 >    <!-- prettier-ignore -->
 >
->   <img src="img/back_ground/level3.png" width="50%" height="25%" title="background" alt="back"></img> <img src="img/level3/card1.png" width="20%" height="10%" title="background" alt="back"></img> <img src="img/level3/card_back.png" width="20%" height="10%" title="background" alt="back"></img> <img src="img/tree.png" width="30%" height="30%" title="background" alt="back"></img> <img src="img/button/level3.png" width="10%" height="10%" title="background" alt="back"></img> <img src="img/button/play.png" width="10%" height="10%" title="background" alt="back"></img> <img src="img/star/star.png" width="10%" height="10%" title="background" alt="back"></img> <img src="img/ornament/o2.png" width="10%" height="10%" title="background" alt="back"></img>
+>   <img src="img/back_ground/level3.png" width="50%" height="25%" title="background" alt="back"></img> <img src="img/level3/card1.png" width="20%" height="10%" title="background" alt="back"></img> <img src="img/level3/card_back.png" width="20%" height="10%" title="background" alt="back"></img> <img src="img/tree.png" width="30%" height="30%" title="background" alt="back"></img> <img src="img/button/level3.png" width="10%" height="10%" title="background" alt="back"></img> <img src="img/button/play.png" width="10%" height="10%" title="background" alt="back"></img> <img src="img/Star/star.png" width="10%" height="10%" title="background" alt="back"></img> <img src="img/ornament/o2.png" width="10%" height="10%" title="background" alt="back"></img>
 
 I made my start screen using [Pixlr](https://www.pixlr.com)
 
