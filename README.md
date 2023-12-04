@@ -306,7 +306,7 @@ All images are in the img directory
 
 I made my start screen using [Pixlr](https://www.pixlr.com)
 
->   <img src="img/title.png" width="75%" height="50%" title="background" alt="back">
+>   <img src="Final_Project/img/title.png" width="75%" height="50%" title="background" alt="back">
 
 ---
 
