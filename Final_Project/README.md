@@ -325,6 +325,9 @@ JavaScript Object Notation (JSON) is a lightweight data format for effectively e
 
 ---
 
-**⭐︎ Game trailor **
+**⭐︎ Game trailor🎥**
+(click this image)
 
-[trailor.mov](https://youtu.be/FqXi3i2b51Q)
+[![trailor.mov](http://img.youtube.com/vi/FqXi3i2b51Q/0.jpg)](https://youtu.be/FqXi3i2b51Q)
+
+---
