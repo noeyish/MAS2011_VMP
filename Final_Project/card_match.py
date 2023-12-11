@@ -537,6 +537,7 @@ def display_saved_data():
 
 
 def game_loop():
+
     global flipped_cards, flip_count, board, matched_pairs
     flip_count = 0
     running = True
@@ -628,6 +629,8 @@ def game_loop():
                         end_message("Game Over!", screen)
                         fade_out_animation(screen)
                         game_over()
+                        running = False
+                        pygame.display.flip()
 
         draw_exit_button(screen)
         display_flip_count(screen)
@@ -712,7 +715,7 @@ def game_over():
     save_decorations_positions(decorations_positions)
 
     # 오너먼트 배치 화면 표시
-    windbell_sound.play()
+    # windbell_sound.play()
     display_decorations_screen(
         decorations, decorations_positions, list(new_decorations_positions.keys()))
 
@@ -762,8 +765,9 @@ def display_decorations_screen(decorations, positions, new_decorations_names):
     tree_width, tree_height = tree_image.get_size()
     tree_x = (WIDTH - tree_width) // 2
     tree_y = (HEIGHT - tree_height) // 2
-
+    windbell_sound.play()
     while running:
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
@@ -782,6 +786,8 @@ def display_decorations_screen(decorations, positions, new_decorations_names):
                 if exit_button_rect.collidepoint(event.pos):
                     click_sound.play()
                     running = False
+                    # pygame.quit()
+                    # sys.exit()
 
             elif event.type == pygame.MOUSEBUTTONUP:
                 selected_decoration = None
@@ -790,15 +796,16 @@ def display_decorations_screen(decorations, positions, new_decorations_names):
                                                   mouse_offset_x, event.pos[1] + mouse_offset_y]
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s:  # 'S' 키를 누르면 저장 후 종료
-                    windbell_sound.set_volume(0)
                     save_decorations_positions(positions)
                     running = False
+                    # pygame.quit()
+                    # sys.exit()
 
         if current_background:  # 현재 배경 이미지가 존재하는지 확인
             screen.blit(current_background, (0, 0))  # 현재 레벨의 배경 설정
         # tree.png 이미지 위치 설정
         font = pygame.font.Font('font/Silver.ttf', 30)  # 폰트 설정
-        text = font.render("key 's' for save...", True,
+        text = font.render("Press the 's' key to save and end the game....", True,
                            (0, 0, 0))  # 빨간색으로 텍스트 렌더링
         text_rect = text.get_rect(center=(WIDTH // 2, 40))  # 중앙 상단에 위치
         screen.blit(text, text_rect)
@@ -809,7 +816,7 @@ def display_decorations_screen(decorations, positions, new_decorations_names):
             screen.blit(decorations[name], pos)
         draw_exit_button(screen)  # 나가기 버튼 그리기
         pygame.display.flip()
-
+    windbell_sound.stop()
     save_decorations_positions(positions)
 
 
