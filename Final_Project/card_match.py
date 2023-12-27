@@ -119,27 +119,22 @@ def initialize_board():
         pygame.image.load(card_back), (CARD_WIDTH, CARD_HEIGHT))
     random.shuffle(cards)
 
-    # Calculate total card width and height for the current level
     total_card_width = cols * CARD_WIDTH + (cols - 1) * CARD_GAP
     total_card_height = rows * CARD_HEIGHT + (rows - 1) * CARD_GAP
 
-    # Calculate starting x and y to center the cards
     start_x = (WIDTH - total_card_width) // 2
     start_y = (HEIGHT - total_card_height) // 2
 
-    # Load images for cards
     card_images = load_card_images(selected_level)
 
-    # Initially, set all cards to flipped
     board = [(card, True) for card in cards]
 
-    # Display all cards (front side) briefly
     draw_all_cards(screen)
     pygame.display.flip()
-    pygame.time.delay(3000)  # Delay for 1 second to show all cards
+    pygame.time.delay(3000)
     game_start_sound.play()
     show_message("Start!", screen, duration=450)
-    # Flip all cards back to their back side
+
     board = [(card, False) for card in cards]
 
 
@@ -541,14 +536,14 @@ def game_loop():
     global flipped_cards, flip_count, board, matched_pairs
     flip_count = 0
     running = True
-
+    display_flip_count(screen)
+    draw_exit_button(screen)
     global total_flips
     # set_background(current_level)
     while running:
         # set_background(current_level)
         draw_all_cards(screen)
-        display_flip_count(screen)
-        draw_exit_button(screen)
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -559,6 +554,7 @@ def game_loop():
 
                 if exit_button_rect.collidepoint(x, y):
                     click_sound.play()
+
                     running = False
 
                 if selected_level == "Level 1":
@@ -581,7 +577,7 @@ def game_loop():
 
                     # Check if the clicked card is already matched
                     if board[card_index][0] in matched_pairs:
-                        continue  # Skip if the card is already matched
+                        continue
 
                     # Check if the card is already flipped or matched
                     if card_index in matched_pairs or card_index in flipped_cards:
@@ -628,14 +624,19 @@ def game_loop():
                     if len(matched_pairs) == len(cards) // 2:
                         end_message("Game Over!", screen)
                         fade_out_animation(screen)
-                        game_over()
                         running = False
-                        pygame.display.flip()
 
-        draw_exit_button(screen)
-        display_flip_count(screen)
+                        game_over()
+
+        # draw_exit_button(screen)
+        # display_flip_count(screen)
         pygame.display.flip()
         clock.tick(FPS)
+
+    flipped_cards = []
+    flip_count = 0
+    matched_pairs = set()
+    total_flips = 0
 
 
 def calculate_stars(level, total_flips):
@@ -663,12 +664,9 @@ def display_stars(screen, num_stars):
     total_stars = 3  # 전체 별의 개수
     star_spacing = 120  # 별들 사이의 간격
 
-    # 별 이미지의 폭을 계산합니다.
     star_width = star_image.get_width()
 
-    # 별들의 전체적인 폭을 계산합니다.
     total_width = star_width * total_stars + star_spacing * (total_stars - 1)
-    # 별들이 화면 중앙에 오도록 시작 위치를 조정합니다.
     start_x = (WIDTH - total_width) // 2
 
     for i in range(total_stars):
@@ -702,7 +700,7 @@ def game_over():
     num_stars = calculate_stars(selected_level, total_flips)
     display_stars(screen, num_stars)
     pygame.display.flip()
-    pygame.time.delay(2000)  # Show the result for 2 seconds
+    pygame.time.delay(2000)
     fade_out_animation(screen)
 
     # 새로운 오너먼트 생성 및 배치
@@ -715,10 +713,9 @@ def game_over():
     save_decorations_positions(decorations_positions)
 
     # 오너먼트 배치 화면 표시
-    # windbell_sound.play()
     display_decorations_screen(
         decorations, decorations_positions, list(new_decorations_positions.keys()))
-
+    print("gameover")
 # 오너먼트 위치 업데이트 함수
 
 
@@ -740,7 +737,6 @@ def update_new_decorations_positions(new_decorations):
     return new_positions
 
 
-# 전역 변수로 현재 레벨의 배경을 저장합니다.
 current_background = None
 
 # 이전에 선택한 레벨의 배경을 설정하는 함수
@@ -749,8 +745,6 @@ current_background = None
 def set_current_background(level):
     global current_background
     current_background = background_images[f"{level}"]
-
-# 오너먼트 배치 화면 표시 함수
 
 # 오너먼트 배치 화면 표시 함수
 
@@ -798,6 +792,7 @@ def display_decorations_screen(decorations, positions, new_decorations_names):
                 if event.key == pygame.K_s:  # 'S' 키를 누르면 저장 후 종료
                     save_decorations_positions(positions)
                     running = False
+
                     # pygame.quit()
                     # sys.exit()
 
@@ -818,6 +813,7 @@ def display_decorations_screen(decorations, positions, new_decorations_names):
         pygame.display.flip()
     windbell_sound.stop()
     save_decorations_positions(positions)
+    print("display")
 
 
 def load_tree_image():
@@ -834,13 +830,13 @@ def load_decorations():
 
 
 def save_decorations_positions(positions):
-    """오너먼트의 위치를 저장."""
+    """오너먼트의 위치를 저장"""
     with open("decorations_positions.json", "w") as f:
         json.dump(positions, f)
 
 
 def load_decorations_positions():
-    """저장된 오너먼트 위치."""
+    """저장된 오너먼트 위치"""
     try:
         with open("decorations_positions.json", "r") as f:
             return json.load(f)
@@ -849,7 +845,7 @@ def load_decorations_positions():
 
 
 def select_random_decorations(decorations, num_stars):
-    """랜덤으로 오너먼트를 선택."""
+    """랜덤으로 오너먼트를 선택"""
     return random.sample(list(decorations.items()), num_stars)
 
 
