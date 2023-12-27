@@ -251,11 +251,11 @@ YouTube link 🎥 (click this image)
 
 ---
 
-**⭐︎ My plan**
+**⭐︎ My plan & progress**
 
-: See pdf file. my pdf file is in Final_Project directory.
+: Look at the presentation directory.
 
-[MYPLAN](https://github.com/noeyish/MAS2011_VMP/blob/main/Final_Project/20221573_심하연_vmp_pj.pdf)
+[MY_PPT](https://github.com/noeyish/MAS2011_VMP/tree/main/Final_Project/presentation)
 
 ---
 
