@@ -16,6 +16,8 @@
 
 **⭐︎ Tutorial**
 
+I used these images to make tutorial.
+
 1.<img src="img/tutorial/001.png" width="45%" height="25%" title="background" alt="back"></img> 2.<img src="img/tutorial/002.png" width="45%" height="25%" title="background" alt="back"></img>
 
 3.<img src="img/tutorial/003.png" width="45%" height="25%" title="background" alt="back"></img> 4.<img src="img/tutorial/004.png" width="45%" height="25%" title="background" alt="back"></img>
@@ -328,6 +330,6 @@ JavaScript Object Notation (JSON) is a lightweight data format for effectively e
 **⭐︎ Game trailor🎥**
 (click this image)
 
-[![trailor.mov](http://img.youtube.com/vi/FqXi3i2b51Q/0.jpg)](https://youtu.be/FqXi3i2b51Q)
+[![trailor.mov](http://img.youtube.com/vi/UbAxDd9R24E/0.jpg)](https://youtu.be/FqXi3i2b51Q)
 
 ---
